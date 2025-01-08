@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Profile - GameZone</title>
+  <link rel="stylesheet" href="../CSS/profile.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <header class="navbar">
+    <h1 class="logo">GameZone</h1>
+    <nav>
+      <a href="homePage.html">Home</a>
+      <a href="login.html">Logout</a>
+    </nav>
+  </header>
+
+  <!-- Profile Section -->
+  <section class="profile-section">
+    <div class="profile-header">
+      <div class="profile-photo-container">
+        <img src="user-photo-placeholder.png" alt="User Photo" id="profile-photo" class="profile-photo">
+        <input type="file" id="upload-photo" accept="image/*" hidden>
+        <button id="upload-button">Change Photo</button>
+      </div>
+      <h2 id="username">Username</h2>
+    </div>
+    <div class="profile-stats">
+      <p><strong>Experience Points:</strong> <span id="xp-points">0</span></p>
+      <p><strong>Member Since:</strong> <span id="member-since">-</span></p>
+      <p><strong>Liked Games:</strong> <span id="liked-games-count">0</span></p>
+      <p><strong>Friends:</strong> <span id="friends-count">0</span></p>
+      <p><strong>Location:</strong> <span id="location">Unknown</span></p>
+      <p>Best Score Pac Man: <span id="best-score"></span></p>
+    </div>
+  </section>
+
+  <!-- Games Played Section -->
+  <section class="games-played-section">
+    <h3>Games Played</h3>
+    <div id="games-list">
+      <!-- List of games will be dynamically populated here -->
+    </div>
+  </section>
+
+  <footer>
+    <p>© 2024 GameZone. All rights reserved.</p>
+  </footer>
+
+  <script src="../JS/profile.js"></script>
+</body>
+</html>

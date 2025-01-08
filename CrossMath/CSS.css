@@ -1,0 +1,122 @@
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9; /* Fond gris clair pour un meilleur contraste */
+    color: #333; /* Texte gris foncé pour la lisibilité */
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(11, 50px); /* 11 colonnes */
+    gap: 1px; /* Petit espace entre les cellules */
+    margin: 20px 0;
+    border: 1px solid black;
+    background-color: #ffffff; /* Fond blanc pour la grille */
+    padding: 5px; /* Espace autour de la grille */
+}
+
+.cell {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    box-sizing: border-box;
+    font-size: 16px; /* Taille du texte ajustée */
+    font-weight: bold;
+    transition: background-color 0.2s, transform 0.2s; /* Transitions fluides pour les interactions */
+}
+
+/* Cellules remplies */
+.filled {
+    background-color: #FFD700; /* Or pour les cellules remplies */
+    color: black; /* Texte en noir pour le contraste */
+    font-weight: bold;
+}
+
+
+/* Cellules interactives (vides) */
+.cell:not(.filled):not(.hidden-cell) {
+    background-color: #FFFACD; /* Jaune clair pour les cellules vides */
+    cursor: pointer; /* Curseur pointeur pour indiquer qu'elles sont cliquables */
+    border: 1px dashed #ccc; /* Bordure en pointillés pour les distinguer */
+}
+
+/* Effet au survol des cellules interactives */
+.cell:not(.filled):not(.hidden-cell):hover {
+    background-color: #f0e68c; /* Jaune légèrement plus foncé au survol */
+    transform: scale(1.05); /* Zoom subtil pour l'effet visuel */
+}
+
+/* Conteneur de la liste des nombres */
+.number-list-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.number-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 10px;
+    max-width: 600px; /* Limite de largeur pour un alignement optimal */
+    gap: 8px; /* Espace entre les nombres */
+}
+
+.number-item {
+    width: 40px;
+    height: 40px;
+    margin: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid #ccc;
+    background-color: #f0f0f0; /* Fond gris clair */
+    cursor: pointer;
+    user-select: none;
+    font-weight: bold;
+    border-radius: 5px; /* Bords arrondis pour un look moderne */
+    transition: background-color 0.2s, transform 0.2s; /* Interactions fluides */
+}
+
+/* Effet au survol pour les nombres */
+.number-item:hover {
+    background-color: #e6e6e6; /* Gris légèrement plus foncé */
+    transform: scale(1.1); /* Zoom subtil */
+}
+
+/* Nombre sélectionné */
+.number-item.selected {
+    background-color: #ADD8E6; /* Bleu clair pour le nombre sélectionné */
+    border-color: #00008B; /* Bleu foncé pour la bordure */
+    font-weight: bold;
+    color: black;
+}
+
+/* Cellules contenant des erreurs */
+.error-cell {
+    border: 2px solid red; /* Bordure rouge pour signaler l'erreur */
+    background-color: #ffcccc; /* Fond rouge clair pour l'erreur */
+}
+.error {
+    border: 2px solid red; /* Bordure rouge */
+    background-color: #ffcccc; /* Rouge clair */
+}
+.hidden-cell {
+    background-color: white; /* Fond blanc pour correspondre à la grille */
+    border: none; /* Pas de bordure pour qu'elle soit invisible */
+    pointer-events: none; /* Désactivation des interactions */
+    user-select: none; /* Désactive la sélection */
+}
+
+.cell[style*="yellow"] {
+    background-color: yellow;
+}
+.hidden-cell {
+    visibility: hidden; /* Masque complètement les cellules */
+}

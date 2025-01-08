@@ -1,0 +1,143 @@
+/* Réinitialisation rapide */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* On s'assure que html et body occupent 100% de hauteur */
+html, body {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+/* Le corps de la page */
+body {
+  background: #000; /* Fond noir */
+  color: #fff;
+  font-family: sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+
+  /* min-height: 100vh => on occupe tout l'écran verticalement */
+  min-height: 100vh;
+
+  /* Tu peux ajuster si tu veux plus ou moins d'espace en haut */
+  padding-top: 15px;
+}
+
+/* Zone d’affichage du score */
+.score-container {
+  font-size: 1.4rem;
+}
+
+/* Message "Appuie sur Espace pour commencer" */
+.start-message {
+  font-size: 1.2rem;
+  /* plus besoin du margin-top: 10px; si on positionne en absolu */
+  position: absolute;
+  left: 100px;    /* place le message à 20px du bord gauche */
+  top: 100px;     /* décale vers le bas de 50px, ajustable pour éviter de chevaucher la grille */
+  text-align: left; /* si tu veux l’aligner à gauche */
+}
+
+
+/* Grille du jeu */
+.grid {
+  display: grid;
+  /* 28 colonnes, 31 lignes => 560px de large, 620px de haut
+     si on garde 20px par case */
+  grid-template-columns: repeat(28, 18px);
+  grid-template-rows: repeat(31, 18px);
+
+  /* Optionnel : si tu veux centrer la grille dans la fenêtre,
+     tu peux ajouter un margin ou un gap.
+     Par ex. margin-top: 20px; 
+  */
+  position: relative;
+}
+
+/* Styles de base pour chaque case du jeu */
+.square {
+  width: 18px;
+  height:18px;
+  position: relative;
+}
+
+/* Murs */
+.wall {
+  background: #0000cc; 
+}
+
+/* Points (pastilles) */
+.dot {
+  background: #000;
+}
+.dot::after {
+  content: "";
+  width: 4px;
+  height: 4px;
+  background: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 8px;
+  left: 8px;
+}
+
+/* Pastilles de puissance (power pellets) */
+.power-pellet {
+  background: #000;
+}
+.power-pellet::after {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 6px;
+  left: 6px;
+}
+
+/* Zone "vide" ou couloir sans pastille */
+.empty {
+  background: #000;
+}
+
+/* Le repaire des fantômes (ghost-lair) */
+.ghost-lair {
+  background: #444; 
+}
+
+/* Pac-Man */
+.pacman {
+  background: yellow;
+  border-radius: 50%;
+}
+
+/* Fantômes */
+.ghost {
+  width: 20px;
+  height: 20px;
+  border-radius: 3px;
+}
+.ghost.red {
+  background: red;
+}
+.ghost.blue {
+  background: #00ffff;
+}
+.ghost.pink {
+  background: pink;
+}
+.ghost.orange {
+  background: orange;
+}
+
+/* Fantômes effrayés (bleus) */
+.frightened {
+  background: blue !important;
+}

@@ -1,0 +1,133 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+  background-color: #000;
+  color: #fff;
+  font-family: 'arial', sans-serif;
+  line-height: 1.6;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background-color: #111;
+  border-bottom: 2px solid #444;
+}
+
+.navbar .logo {
+  font-size: 28px;
+  font-weight: bold;
+  color: #00f;
+}
+
+.navbar nav a {
+  color: #fff;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+.navbar nav a:hover {
+  color: #00f;
+}
+
+/* Profile Section */
+.profile-section {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.profile-header {
+  margin-bottom: 30px;
+}
+
+.profile-photo-container {
+  position: relative;
+  display: inline-block;
+}
+
+.profile-photo {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #00f;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.profile-photo:hover {
+  transform: scale(1.05);
+  box-shadow: 0 0 20px #00f;
+}
+
+#upload-button {
+  margin-top: 10px;
+  padding: 10px 15px;
+  background-color: #00f;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+#upload-button:hover {
+  background-color: #0056b3;
+}
+
+/* Profile Stats */
+.profile-stats p {
+  margin: 10px 0;
+  font-size: 18px;
+  color: #ccc;
+}
+
+/* Games Played Section */
+.games-played-section {
+  padding: 20px;
+  text-align: center;
+}
+
+.games-played-section h3 {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+#games-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+
+.game-item {
+  background-color: #222;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  width: 150px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.game-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0, 0, 255, 0.5);
+}
+
+footer {
+  text-align: center;
+  padding: 10px 0;
+  background-color: #111;
+  border-top: 2px solid #444;
+  margin-top: 20px;
+}

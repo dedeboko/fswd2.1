@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GameZone Home Page</title>
+    <link rel="stylesheet" href="../CSS/HomePage.css">
+    <script src='/JS/cookies.js'></script>
+</head>
+
+<body>
+    <!-- Cookie Consent Modal -->
+    <div id="cookie-consent-modal" class="cookie-popup">
+        <div class="cookie-popup-content">
+            <img src="/picture/cookies.jpg" alt="Cookies" class="cookie-icon">
+            <p class="cookie-text">
+                We use cookies to enhance your experience. By continuing to browse, you consent to our Policy.
+            </p>
+            <div class="cookie-buttons">
+                <button id="accept-cookies" class="cookie-button accept">Accept All</button>
+                <button id="reject-cookies" class="cookie-button reject">Reject All</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <ul class="sidebar-menu">
+            <li><button onclick="filterGames('action')" class="sidebar-item">Action</button></li>
+            <li><button onclick="filterGames('adventure')" class="sidebar-item">Adventure</button></li>
+            <li><button onclick="filterGames('racing')" class="sidebar-item">Racing</button></li>
+            <li><button onclick="filterGames('sport')" class="sidebar-item">Sport</button></li>
+            <li><button onclick="filterGames('strategy')" class="sidebar-item">Strategy</button></li>
+        </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Navbar -->
+        <header class="navbar">
+            <div class="logo">GameZone</div>
+            <nav>
+                <a href="homePage.html">Home</a>
+                <a href="profile.html" onclick="loadProfileJS(event)">Profile</a>
+                <a href="login.html" class="logout">Logout</a>
+            </nav>
+            
+            <!-- Search Bar -->
+            <form class="search-bar" id="searchForm">
+                <input type="text" id="searchInput" placeholder="Search games..." aria-label="Search games">
+                <button type="submit">Search</button>
+            </form>
+        </header>
+
+        <!-- Welcome Section -->
+        <section class="welcome-section">
+            <h2>Welcome to GameZone!</h2>
+            <p>Explore, play, and enjoy your favorite games.</p>
+        </section>
+
+        <!-- Games Section -->
+        <section class="games-section">
+            <h3>Available Games</h3>
+            <div class="games-grid" id="gamesGrid">
+                <!-- Les icônes seront générées ici par JavaScript -->
+            </div>
+        </section>
+    </div>
+ 
+    <script src='/JS/homePage.js'></script>
+    <footer>
+        <p>© 2024 GameZone. All rights reserved.</p>
+    </footer>
+</body>
+</html>
